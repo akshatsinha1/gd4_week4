@@ -11,17 +11,9 @@ public class SpawnManager : MonoBehaviour
         InvokeRepeating("spawnObstacles", 2, 3);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void spawnObstacles()
     {
         int obstacleIndex = Random.Range(0, obstaclePrefabs.Length);
         Instantiate(obstaclePrefabs[obstacleIndex], spawnPosition, Quaternion.identity);
-
-
     }
 }
