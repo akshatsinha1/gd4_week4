@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2335655903432299572}
   - component: {fileID: 8487126149764130279}
   - component: {fileID: 6290733653275689924}
+  - component: {fileID: 8376666392134409099}
   m_Layer: 0
   m_Name: Prop_Barrier01
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,6 +111,33 @@ CapsuleCollider:
   m_Height: 1.7452259
   m_Direction: 1
   m_Center: {x: 0, y: 0.87261295, z: 0}
+--- !u!54 &8376666392134409099
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4037120626599713288}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4704201336980092830
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +150,7 @@ GameObject:
   - component: {fileID: 4817289530486110220}
   m_Layer: 0
   m_Name: Traffic Cube
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
