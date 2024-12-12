@@ -12,11 +12,15 @@ public class PlayerController : MonoBehaviour
 
     public ParticleSystem dirtSplatter;
 
+    AudioSource _audioSource;
+    public AudioClip jumpSound, crashSound;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
         //Physics.gravity = Physics.gravity * gravityModifier;
         Physics.gravity *= gravityModifier;
     }
@@ -32,6 +36,8 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("Jump_trig");
             dirtSplatter.Stop();
 
+            _audioSource.PlayOneShot(jumpSound);
+
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -42,14 +48,17 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(currentScene.buildIndex);
         }
     }
-   
+   public void animationEventTest()
+    {
+
+    }
     private void OnCollisionEnter(Collision collision)
     {
         //whenever the player collides with any object, we set the bool to true
         canJump = true;
         Debug.Log(collision.transform.name);
 
-        if(!isGameOver)dirtSplatter.Play();
+        dirtSplatter.Play();
 
         if(collision.transform.tag == "Obstacle")
         {
@@ -58,6 +67,9 @@ public class PlayerController : MonoBehaviour
             //play a death animation
             anim.SetBool("Death_b", true);
             //stop everything else from moving
+            _audioSource.PlayOneShot(crashSound);
+            
+
         }
     }
 
