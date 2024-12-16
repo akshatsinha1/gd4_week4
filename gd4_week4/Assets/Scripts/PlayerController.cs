@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
     {
 
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         //whenever the player collides with any object, we set the bool to true
